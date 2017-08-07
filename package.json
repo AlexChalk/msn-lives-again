@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node server",
-    "start-servers": "concurrently \"nodemon server\" \"cd react-ui && npm start\"",
+    "start-servers": "concurrently \"nodemon server\" \"cd client && npm start\"",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [
