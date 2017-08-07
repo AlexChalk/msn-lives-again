@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './App.js';
 import './index.css';
+import ConversationWindow from './components/ConversationWindow.js';
 
 render(
-  <p>hello</p>,
-  // <App />,
+  <ConversationWindow />,
   document.getElementById('root')
 );
