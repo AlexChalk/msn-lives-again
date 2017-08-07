@@ -4,7 +4,7 @@ module.exports = {
     'es6': true,
     'node': true
   },
-  'extends': ['eslint:recommended', 'plugin:react/recommended'],
+  'extends': 'eslint:recommended',
   'parserOptions': {
     'ecmaFeatures': {
       'experimentalObjectRestSpread': true,
@@ -34,8 +34,7 @@ module.exports = {
       'always'
     ],
     'no-unused-vars': 'warn',
-    // Add more fine-grained react plugin rules like this:
-    // 'react/jsx-uses-react': 'error',
-    // 'react/jsx-uses-vars': 'error'
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error'
   }
 };

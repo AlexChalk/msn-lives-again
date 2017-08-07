@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ConversationWindow from './ConversationWindow.js';
+import ContactsWindow from './ContactsWindow.js';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -39,16 +42,19 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Messenger for Roof AI</h2>
         </div>
-        <p className="App-intro">
-          {'This is '}
-            {'create-react-app with a custom Node/Express server'}
-          <br/>
-        </p>
-        <p className="App-intro">
-          {this.state.fetching
-            ? 'Fetching message from API'
-            : this.state.message}
-        </p>
+        <div className="App-body">
+          <div id="messageArea" className="row">
+            <div className="row">
+              <ContactsWindow />
+              <ConversationWindow />
+            </div>
+          </div>
+          <p className="App-intro">
+            {this.state.fetching
+                ? 'Fetching message from API'
+                : this.state.message}
+          </p>
+        </div>
       </div>
     );
   }
