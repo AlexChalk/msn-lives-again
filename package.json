@@ -1,0 +1,36 @@
+{
+  "name": "messenger-for-roofai",
+  "version": "1.0.0",
+  "description": "A messenger app implementation using MERN stack, websockets, and Twilio",
+  "engines": {
+    "node": "6.11.x"
+  },
+  "scripts": {
+    "start": "node server",
+    "start-servers": "concurrently \"nodemon server\" \"cd react-ui && npm start\"",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-to-be-confirmed-"
+  },
+  "keywords": [
+    "MERN",
+    "socket.io",
+    "twilio"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nightwatch": "^0.9.16",
+    "nodemon": "^1.11.0",
+    "selenium-download": "^2.0.10"
+  }
+}
