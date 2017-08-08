@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import VisibleConversations from '../containers/VisibleConversations.js';
 import ContactsWindow from './ContactsWindow.js';
 
-import logo from './logo.svg';
+import logo from '../../public/logo.png';
 import './App.css';
 
 class App extends Component {
@@ -41,7 +41,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Messenger for Roof AI</h2>
+          <h2 className="Headline">Messenger for Roof AI</h2>
         </div>
         <div className="App-body">
           <div id="messageArea" className="row">
