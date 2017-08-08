@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "enzyme": "^2.9.1",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "history": "^4.6.3",
     "prop-types": "^15.5.10",
     "react": "^15.4.2",
@@ -14,7 +16,8 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-router-redux": "^4.0.8",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-saga": "^0.15.6"
   },
   "scripts": {
     "start": "react-scripts start",

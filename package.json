@@ -6,8 +6,7 @@
     "node": "6.11.x"
   },
   "scripts": {
-    "postinstall": "node nightwatch.conf.js",
-    "start": "node server",
+    "start": "nodemon server",
     "start-servers": "concurrently \"nodemon server\" \"cd client && npm start\"",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
@@ -16,7 +15,10 @@
     "react-ui/node_modules"
   ],
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.3",
+    "twilio": "^3.6.1"
   },
   "repository": {
     "type": "git",

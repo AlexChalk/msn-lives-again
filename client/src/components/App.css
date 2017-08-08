@@ -1,14 +1,28 @@
-.App-logo {
-  height: 60px;
-}
-
 .App-header {
   padding: 5px;
 }
 
-.Headline {
+#messages {
+  height: 70vh;
+  overflow: auto;
+}
+
+.sent-message {
+  background: #ABCDEF; 
+  max-width: 80vw;
   float: right;
-  line-height: 0.7;
+  clear: both;
+}
+
+.received-message {
+  background: #ABEFCB; 
+  max-width: 80vw;
+  float: left;
+  clear: both;
+}
+
+.Headline {
+  text-align: center;
 }
 
 .App-intro {

@@ -1,7 +1,15 @@
 const messages = (state = [], action) => {
-  console.log('The message will happen');
-  console.log(state, action);
-  return state;
+  switch (action.type) {
+    case 'SEND_MESSAGE_SUCCESS':
+      return [
+        ...state,
+        { interlocutor: action.interlocutor,
+          timestamp: Date.now(),
+          body: action.body,
+        }];
+    default:
+      return state;
+  }
 };
 
 export default messages;

@@ -1,13 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
+import createBrowserHistory from 'history/createBrowserHistory';
 import Root from './components/Root.js';
-import rootReducer from './reducers/index.js';
+import store from './store.js';
 import './index.css';
-
-const store = createStore(rootReducer);
 
 render((
   <Root store={store} />),
   document.getElementById('root')
 );
+
+
+export const history = createBrowserHistory();
+export default store;

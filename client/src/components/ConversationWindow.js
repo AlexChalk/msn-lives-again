@@ -1,24 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import SendMessage from '../containers/SendMessage.js';
+import Message from './Message.js';
 
-const ConversationWindow = ({ messages, onWindowClick }) => ( 
+const ConversationWindow = ({ messages }) => ( 
   <div className="col-md-8">
     <div className="chat" id="chat"></div>
-    <form id="messageForm">
-      <div className="form-group">
-        <label>Enter Message</label>
-        <textarea className="form-control" id="message"></textarea>
-        <br />
-        <input type="submit" className="btn btn-primary" 
-          value="Send Message" /> 
-      </div>
-    </form>
+    <div id="messages" >
+      {messages.map(message => (
+        <Message {...message} />
+      ))}
+    </div>
+    <SendMessage />
   </div>
 );
-
-// ConversationWindow.propTypes = {
-//   messages: PropTypes.array.isRequired,
-//   onWindowClick: PropTypes.func.isRequired
-// };
 
 export default ConversationWindow;
