@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ConversationWindow from './ConversationWindow.js';
+import { Route } from 'react-router-dom';
+import VisibleConversations from '../containers/VisibleConversations.js';
 import ContactsWindow from './ContactsWindow.js';
 
 import logo from './logo.svg';
@@ -46,7 +47,8 @@ class App extends Component {
           <div id="messageArea" className="row">
             <div className="row">
               <ContactsWindow />
-              <ConversationWindow />
+              <Route path="/conversations/:id" 
+                component={VisibleConversations} />
             </div>
           </div>
           <p className="App-intro">
