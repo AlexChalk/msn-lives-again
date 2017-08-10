@@ -7,7 +7,7 @@ const ConversationWindow = ({ messages }) => (
     <div className="chat" id="chat"></div>
     <div id="messages" >
       {messages.map(message => (
-        <Message {...message} />
+        <Message key={message.messageSid} {...message} />
       ))}
     </div>
     <SendMessage />

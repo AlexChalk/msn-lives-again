@@ -4,7 +4,8 @@ const messages = (state = [], action) => {
       return [
         ...state,
         { interlocutor: action.interlocutor,
-          timestamp: Date.now(),
+          messageSid: action.messageSid,
+          timestamp: new Date(),
           body: action.body,
         }];
     default:
