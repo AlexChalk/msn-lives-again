@@ -2,6 +2,9 @@
 node_modules
 npm-debug.log
 
+# Project notes to self
+notes
+
 # Nightwatch
 reports
 screenshots

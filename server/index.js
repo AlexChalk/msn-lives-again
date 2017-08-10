@@ -11,7 +11,7 @@ const server = app.listen(PORT, function () {
 const twilio = require('twilio');
 const io = require('socket.io')(server);
 
-// Configure parser for api
+// Configure parser for twilio api
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

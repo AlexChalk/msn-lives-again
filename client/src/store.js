@@ -7,7 +7,14 @@ import rootReducer from './reducers/index.js';
 const sagaMiddleware = createSagaMiddleware();
 
 const defaultState = {
-  messages: []
+  messages: [
+    { 
+      interlocutor: 15145495327,
+      messageSid: '1234567890ABCDEF',
+      timestamp: new Date(),
+      body: 'Parsecs, Parsecs?',
+    }
+  ]
 };
 
 const store = createStore(rootReducer, 
