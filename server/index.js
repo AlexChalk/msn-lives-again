@@ -19,12 +19,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
-// Answer API requests.
-app.get('/api', function (req, res) {
-  res.set('Content-Type', 'application/json');
-  res.send('{"message":"Hello from the custom server!"}');
-});
-
 // Receive SMS messages.
 app.post('/sms/incoming', function(req, res) {
   const to = req.body.To;
