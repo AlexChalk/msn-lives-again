@@ -11,16 +11,21 @@ const socket = io();
 const socketIoMiddleware = createSocketIoMiddleware(socket, 'server/');
 
 const defaultState = {
+  contacts: [
+    {
+      number: '+15146226844',
+    },
+  ],
   messages: [
     { 
-      interlocutor: '15145495327',
+      contact: '15145495327',
       messageSid: '1234567890ABCDEF',
       direction: 'outgoing',
       timestamp: new Date(),
       body: 'Parsecs, Parsecs?',
     },
     { 
-      interlocutor: '+15146137491',
+      contact: '+15146137491',
       messageSid: '123456789',
       direction: 'incoming',
       timestamp: new Date(),

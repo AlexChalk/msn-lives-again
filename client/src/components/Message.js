@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ interlocutor, body, timestamp, direction }) => (
+const Message = ({ contact, body, timestamp, direction }) => (
   <div className={'well ' + direction} >
     <ul>
       <li>{body}</li>
-      <li>{interlocutor}</li>
+      <li>{contact}</li>
       <li>{timestamp.toLocaleString()}</li>
     </ul>
   </div>
 );
 
 Message.propTypes = {
-  interlocutor: PropTypes.string.isRequired,
+  contact: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timestamp: PropTypes.instanceOf(Date).isRequired,
   direction: PropTypes.string.isRequired,

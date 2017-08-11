@@ -19,6 +19,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
+// Add a contact.
+app.post('/contacts', function(req, res) {
+  res.send('Contact added');
+});
+
 // Receive SMS messages.
 app.post('/sms/incoming', function(req, res) {
   const to = req.body.To;
@@ -28,7 +33,7 @@ app.post('/sms/incoming', function(req, res) {
 
   io.emit('action', { 
     type: 'RECEIVE_MESSAGE',
-    interlocutor: from, 
+    contact: from, 
     body: body, 
     messageSid: messageSid });
   res.send('SMS received');

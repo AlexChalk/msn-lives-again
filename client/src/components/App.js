@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import VisibleConversations from '../containers/VisibleConversations.js';
-import ContactsWindow from './ContactsWindow.js';
+import VisibleContacts from '../containers/VisibleContacts.js';
+import AddContactWindow from './AddContactWindow.js';
 import './App.css';
 
 const App = () => ( 
@@ -12,7 +13,8 @@ const App = () => (
     <div className="App-body">
       <div id="messageArea" className="row">
         <div className="row">
-          <ContactsWindow />
+          <VisibleContacts />
+          <Route exact path="/" component={AddContactWindow} />
           <Route path="/conversations/:id" 
             component={VisibleConversations} />
         </div>

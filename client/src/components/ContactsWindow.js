@@ -1,17 +1,15 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import Contact from './Contact.js';
 
 const ContactsWindow = ({ contacts }) => ( 
   <div className="col-md-4">
-    <div className="well">
+    <div className="well" id="contacts">
       <h3>Contacts</h3>
-      <ul className="list-group" id="users"></ul>
+        {contacts.map(contact => (
+          <Contact key={contact.number} {...contact} />
+        ))}
     </div>
   </div>
 );
-
-// ContactsWindow.propTypes = {
-//   contacts: PropTypes.array.isRequired
-// };
 
 export default ContactsWindow;

@@ -3,7 +3,7 @@ const messages = (state = [], action) => {
     case 'SEND_MESSAGE_SUCCESS':
       return [
         ...state,
-        { interlocutor: action.interlocutor,
+        { contact: action.contact,
           messageSid: action.messageSid,
           direction: 'outgoing',
           timestamp: new Date(),
@@ -12,7 +12,7 @@ const messages = (state = [], action) => {
     case 'RECEIVE_MESSAGE':
       return [
         ...state,
-        { interlocutor: action.interlocutor,
+        { contact: action.contact,
           messageSid: action.messageSid,
           direction: 'incoming',
           timestamp: new Date(),
