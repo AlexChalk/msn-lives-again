@@ -16,6 +16,20 @@ module.exports = {
       .waitForElementVisible('#messages', 1000);
 
     browser.expect.element('#messages').text.to.contain('nightwatch');
+  },
+  'receive message' : function (browser) {
+    const axios = require('axios');
+    const data = {
+      'To' : '5145495327',
+      'From' : '5146137491',
+      'Body' : 'Incoming',
+      'MessageSid' : 'asdlkajshgldkasjhlkjhag'
+    };
+    axios.post('http://localhost:3000/sms/incoming', data);
+    browser
+      .pause(1000);
+
+    browser.expect.element('#messages').text.to.contain('Incoming');
     browser.end();
   }
 };

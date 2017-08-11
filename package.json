@@ -7,8 +7,8 @@
   },
   "scripts": {
     "start": "nodemon server",
-    "selenium-update": "node nightwatch.conf.js",
     "start-servers": "concurrently \"nodemon server\" \"cd client && npm start\"",
+    "e2e-tests": "node nightwatch.conf.js && ./node_modules/.bin/nightwatch",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [
@@ -31,6 +31,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "axios": "^0.16.2",
     "concurrently": "^3.5.0",
     "eslint": "^4.4.1",
     "eslint-plugin-react": "^7.2.0",

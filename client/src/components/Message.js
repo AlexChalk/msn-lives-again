@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ interlocutor, body, timestamp, messageSid }) => (
-  <div className="well sent-message" key={messageSid} >
+const Message = ({ interlocutor, body, timestamp, direction }) => (
+  <div className={'well ' + direction} >
     <ul>
       <li>{body}</li>
       <li>{interlocutor}</li>
@@ -15,8 +15,7 @@ Message.propTypes = {
   interlocutor: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timestamp: PropTypes.instanceOf(Date).isRequired,
-  messageSid: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired,
+  direction: PropTypes.string.isRequired,
 };
 
 export default Message;

@@ -7,14 +7,14 @@
   overflow: auto;
 }
 
-.sent-message {
+.outgoing {
   background: #ABCDEF; 
   max-width: 80vw;
   float: right;
   clear: both;
 }
 
-.received-message {
+.incoming {
   background: #ABEFCB; 
   max-width: 80vw;
   float: left;

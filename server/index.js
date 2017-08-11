@@ -32,8 +32,11 @@ app.post('/sms/incoming', function(req, res) {
   const body = req.body.Body;
   const messageSid = req.body.MessageSid;
 
-  io.emit('incoming sms event', { to, from, body, messageSid });
-  console.log(to, from, body, messageSid);
+  io.emit('action', { 
+    type: 'RECEIVE_MESSAGE',
+    interlocutor: from, 
+    body: body, 
+    messageSid: messageSid });
   res.send('SMS received');
 });
 
