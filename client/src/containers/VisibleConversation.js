@@ -16,9 +16,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const VisibleConversations = connect(
+const VisibleConversation = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ConversationWindow);
 
-export default VisibleConversations;
+export default VisibleConversation;

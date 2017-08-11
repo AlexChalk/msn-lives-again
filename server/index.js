@@ -26,16 +26,11 @@ app.post('/contacts', function(req, res) {
 
 // Receive SMS messages.
 app.post('/sms/incoming', function(req, res) {
-  const to = req.body.To;
-  const from = req.body.From;
-  const body = req.body.Body;
-  const messageSid = req.body.MessageSid;
-
   io.emit('action', { 
     type: 'RECEIVE_MESSAGE',
-    contact: from, 
-    body: body, 
-    messageSid: messageSid });
+    contact: req.body.From, 
+    body: req.body.Body, 
+    messageSid: req.body.MessageSid });
   res.send('SMS received');
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import VisibleConversations from '../containers/VisibleConversations.js';
+import VisibleConversation from '../containers/VisibleConversation.js';
 import VisibleContacts from '../containers/VisibleContacts.js';
 import AddContactWindow from './AddContactWindow.js';
 import './App.css';
@@ -16,7 +16,7 @@ const App = () => (
           <VisibleContacts />
           <Route exact path="/" component={AddContactWindow} />
           <Route path="/conversations/:id" 
-            component={VisibleConversations} />
+            component={VisibleConversation} />
         </div>
       </div>
     </div>
