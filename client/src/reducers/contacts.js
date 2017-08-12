@@ -7,7 +7,8 @@ const contacts = (state = [], action) => {
           number: action.number,
         }];
     case 'RECEIVE_MESSAGE':
-      if (!state.includes({number: action.contact})) {
+      if (!state.filter((obj) => { 
+        return obj.number === action.contact; })[0]) {
         return [
           ...state,
           { 
