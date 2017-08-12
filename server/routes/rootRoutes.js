@@ -8,11 +8,11 @@ module.exports = (app, io) => {
 
   // Receive SMS messages.
   app.post('/sms/incoming', function(req, res) {
-    Message.processReceivedSMS(req, res, io);
+    Message.receiveSMSAndSave(req, res, io);
   });
 
   // Send SMS messages.
   app.post('/sms/outgoing', (req, res) => {
-    Message.sendSMS(req, res);
+    Message.sendSMSAndSave(req, res);
   });
 };

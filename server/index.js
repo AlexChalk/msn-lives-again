@@ -9,10 +9,17 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Run server
-const server = app.listen(PORT, function () {
-  console.log(`Listening on port ${PORT}`);
+// Database
+const mongoose = require('mongoose');
+const database = process.env.MONGODB_URI 
+  || 'mongodb://localhost:27017/twilio-messenger-dev';
+
+mongoose.connect(database, {
+  useMongoClient: true,
 });
+
+// Run server
+const server = app.listen(PORT);
 const io = require('socket.io')(server);
 
 // Almost all routes 
