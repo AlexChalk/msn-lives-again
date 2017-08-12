@@ -18,6 +18,8 @@ const messages = (state = [], action) => {
           timestamp: new Date(),
           body: action.body,
         }];
+    case 'LOAD_MESSAGES_SUCCESS':
+      return(action.response);
     default:
       return state;
   }

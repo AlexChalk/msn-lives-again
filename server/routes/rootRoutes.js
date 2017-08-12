@@ -15,4 +15,9 @@ module.exports = (app, io) => {
   app.post('/sms/outgoing', (req, res) => {
     Message.sendSMSAndSave(req, res);
   });
+
+  // Load messages.
+  app.get('/sms', (req, res) => {
+    Message.loadAll(req, res);
+  });
 };

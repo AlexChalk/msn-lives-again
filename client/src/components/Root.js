@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import App from './App.js';
+import AppContainer from '../containers/AppContainer.js';
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <BrowserRouter>
-      <Route path="/" component={App} />
+      <Route path="/" component={AppContainer} />
     </BrowserRouter>
   </Provider>
 );

@@ -43,6 +43,6 @@ require('./routes/rootRoutes.js')(app, io);
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
 // All remaining requests return the React app, so it can handle routing.
-app.get('*', function(request, response) {
-  response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+app.get('*', function(req, res) {
+  res.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
 });

@@ -21,3 +21,9 @@ export const addContact = (number) => {
     number
   };
 };
+
+export const loadDatabase = () => {
+  return {
+    type: 'LOAD_DATABASE',
+  };
+};

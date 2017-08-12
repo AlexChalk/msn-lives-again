@@ -12,6 +12,11 @@ const messageDataSchema = new Schema({
 
 const MessageData = mongoose.model('MessageData', messageDataSchema);
 
+exports.loadAll = (req, res) => {
+  MessageData.find()
+    .then(messageData => res.status(201).send(messageData))
+    .catch(error => res.status(400).send(error));
+};
 
 exports.sendSMSAndSave = (req, res) => {
   let accountSid = process.env.TWILIO_ACCOUNT_SID;
