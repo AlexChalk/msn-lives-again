@@ -6,7 +6,7 @@ const messages = (state = [], action) => {
         { contact: action.contact,
           messageSid: action.messageSid,
           direction: 'outgoing',
-          timestamp: new Date(),
+          timestamp: new Date().toString(),
           body: action.body,
         }];
     case 'RECEIVE_MESSAGE':
@@ -15,7 +15,7 @@ const messages = (state = [], action) => {
         { contact: action.contact,
           messageSid: action.messageSid,
           direction: 'incoming',
-          timestamp: new Date(),
+          timestamp: new Date().toString(),
           body: action.body,
         }];
     case 'LOAD_MESSAGES_SUCCESS':

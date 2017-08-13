@@ -6,7 +6,7 @@ const messageDataSchema = new Schema({
   user:         { type: String, required: true, },
   body:         { type: String, required: true, },
   direction:    { type: String, required: true, },
-  date:         { type: Date,   required: true, },
+  timestamp:    { type: Date,   required: true, },
   messageSid:   { type: String, required: true, },
 });
 
@@ -37,10 +37,10 @@ exports.sendSMSAndSave = (req, res) => {
         direction: 'outgoing',
         body: req.body.body,
         messageSid: message.sid,
-        date: new Date(),
+        timestamp: Date.now(),
       });
       messageData.save();
-      res.status(200).send(message.sid);
+      res.status(200).send(messageData);
     })
 
     .catch(error => res.status(400).send(error));
@@ -60,7 +60,7 @@ exports.receiveSMSAndSave = (req, res, socket) => {
     direction: 'incoming',
     body: req.body.Body,
     messageSid: req.body.MessageSid,
-    date: new Date(),
+    timestamp: Date.now(),
   });
   messageData.save();
 

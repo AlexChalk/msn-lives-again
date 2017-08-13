@@ -17,20 +17,20 @@ const defaultState = {
     },
   ],
   messages: [
-    { 
-      contact: '+15145495327',
-      messageSid: '1234567890ABCDEF',
-      direction: 'outgoing',
-      timestamp: new Date(),
-      body: 'Parsecs, Parsecs?',
-    },
-    { 
-      contact: '+15145495327',
-      messageSid: '123456789',
-      direction: 'incoming',
-      timestamp: new Date(),
-      body: 'The robots are coming! Head for the hills!',
-    },
+    // { 
+    //   contact: '+15145495327',
+    //   messageSid: '1234567890ABCDEF',
+    //   direction: 'outgoing',
+    //   timestamp: new Date(),
+    //   body: 'Parsecs, Parsecs?',
+    // },
+    // { 
+    //   contact: '+15145495327',
+    //   messageSid: '123456789',
+    //   direction: 'incoming',
+    //   timestamp: new Date(),
+    //   body: 'The robots are coming! Head for the hills!',
+    // },
   ]
 };
 

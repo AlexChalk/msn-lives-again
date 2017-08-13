@@ -5,14 +5,14 @@ const Message = ({ body, timestamp, direction }) => (
   <div className={'well ' + direction} >
     <ul>
       <li>{body}</li>
-      <li>{timestamp.toLocaleString()}</li>
+      <li>{new Date(timestamp).toLocaleString()}</li>
     </ul>
   </div>
 );
 
 Message.propTypes = {
   body: PropTypes.string.isRequired,
-  timestamp: PropTypes.instanceOf(Date).isRequired,
+  timestamp: PropTypes.string.isRequired,
   direction: PropTypes.string.isRequired,
 };
 
