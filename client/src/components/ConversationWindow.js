@@ -1,5 +1,5 @@
 import React from 'react';
-import SendMessage from '../containers/SendMessage.js';
+import SendMessageContainer from '../containers/SendMessageContainer.js';
 import Message from './Message.js';
 
 function ConversationWindow({ messages, match }) {
@@ -10,11 +10,11 @@ function ConversationWindow({ messages, match }) {
     <div className="col-md-8">
       <div className="chat" id="chat"></div>
       <div id="messages" >
-        {matchedMessages.map(message => (
+        {messages.map(message => (
           <Message key={message.messageSid} {...message} />
         ))}
       </div>
-      <SendMessage />
+      <SendMessageContainer />
     </div>
   );
 }

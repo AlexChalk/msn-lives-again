@@ -16,7 +16,7 @@ export function* sendMessageAsync(action) {
     const response = yield call(axios.post, window.location.origin + 
       '/sms/outgoing', data);
     yield put({ type: 'SEND_MESSAGE_SUCCESS', body: action.body, 
-      contact: action.contact, messageSid: response.data});
+      contact: response.data.contact, messageSid: response.data.messageSid});
   } catch (error) {
     yield put({ type: 'SEND_MESSAGE_FAILURE', error: error});
   }

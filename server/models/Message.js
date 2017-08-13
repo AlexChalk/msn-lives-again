@@ -21,19 +21,21 @@ exports.loadAll = (req, res) => {
 exports.sendSMSAndSave = (req, res) => {
   let accountSid = process.env.TWILIO_ACCOUNT_SID;
   let authToken = process.env.TWILIO_AUTH_TOKEN;
+  let userNumber = process.env.TWILIO_PHONE_NUMBER;
+
   const client = require('twilio')(accountSid, authToken);
 
   client.messages
     .create({
       to: req.body.to,
-      from: req.body.from,
+      from: userNumber,
       body: req.body.body
     })
 
     .then((message) => {
       const messageData = new MessageData({
         contact: req.body.to,
-        user: req.body.from,
+        user: userNumber,
         direction: 'outgoing',
         body: req.body.body,
         messageSid: message.sid,
@@ -46,7 +48,10 @@ exports.sendSMSAndSave = (req, res) => {
     .catch(error => res.status(400).send(error));
 };
 
+
 exports.receiveSMSAndSave = (req, res, socket) => {
+  let userNumber = process.env.TWILIO_PHONE_NUMBER;
+
   socket.emit('action', { 
     type: 'RECEIVE_MESSAGE',
     contact: req.body.From, 
@@ -56,7 +61,7 @@ exports.receiveSMSAndSave = (req, res, socket) => {
 
   const messageData = new MessageData({
     contact: req.body.From,
-    user: req.body.To,
+    user: userNumber,
     direction: 'incoming',
     body: req.body.Body,
     messageSid: req.body.MessageSid,

@@ -1,8 +1,7 @@
-export const sendMessage = (body, to, from) => {
+export const sendMessage = (body, to) => {
   return {
     type: 'SEND_MESSAGE',
     body: body,
-    from: from,
     contact: to,
   };
 };
@@ -25,5 +24,12 @@ export const addContact = (number) => {
 export const loadDatabase = () => {
   return {
     type: 'LOAD_DATABASE',
+  };
+};
+
+export const setActiveContact = (number) => {
+  return {
+    type: 'SET_ACTIVE_CONTACT',
+    number,
   };
 };

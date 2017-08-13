@@ -1,8 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { sendMessage } from '../actions/actionCreators.js';
 
-let SendMessage = ({ dispatch }) => {
+const SendMessage = ({ sendMessage, activeContact }) => {
   let input;
   return (
     <div>
@@ -12,7 +10,7 @@ let SendMessage = ({ dispatch }) => {
           if (!input.value.trim()) {
             return;
           }
-          dispatch(sendMessage(input.value, '+15145495327', '+15146137491'));
+          sendMessage(input.value, activeContact);
           input.value = '';
         }}
       >
@@ -34,6 +32,5 @@ let SendMessage = ({ dispatch }) => {
   );
 };
 
-SendMessage = connect()(SendMessage);
 
 export default SendMessage;
