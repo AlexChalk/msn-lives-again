@@ -6,17 +6,6 @@ const contacts = (state = [], action) => {
         { 
           number: action.number,
         }];
-    case 'RECEIVE_MESSAGE':
-      if (!state.filter((obj) => { 
-        return obj.number === action.contact; })[0]) {
-        return [
-          ...state,
-          { 
-            number: action.contact,
-          }];
-      } else {
-        return state;
-      }
     case 'LOAD_CONTACTS_SUCCESS':
       return(action.response);
     default:
