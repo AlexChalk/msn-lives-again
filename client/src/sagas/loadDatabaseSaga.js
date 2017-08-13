@@ -6,11 +6,21 @@ export default function* watchLoadDatabaseAsync() {
 }
 
 export function* loadDatabaseAsync() {
+  // Messages
   try {
     const response = yield call(axios.get, window.location.origin + 
       '/sms');
     yield put({ type: 'LOAD_MESSAGES_SUCCESS', response: response.data});
   } catch (error) {
     yield put({ type: 'LOAD_MESSAGES_FAILURE', error: error});
+  }
+
+  // Contacts
+  try {
+    const response = yield call(axios.get, window.location.origin + 
+      '/contacts');
+    yield put({ type: 'LOAD_CONTACTS_SUCCESS', response: response.data});
+  } catch (error) {
+    yield put({ type: 'LOAD_CONTACTS_FAILURE', error: error});
   }
 }

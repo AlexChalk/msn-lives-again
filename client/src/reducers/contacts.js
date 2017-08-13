@@ -17,6 +17,8 @@ const contacts = (state = [], action) => {
       } else {
         return state;
       }
+    case 'LOAD_CONTACTS_SUCCESS':
+      return(action.response);
     default:
       return state;
   }

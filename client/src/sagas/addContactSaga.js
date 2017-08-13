@@ -7,9 +7,10 @@ export default function* watchAddContactAsync() {
 
 export function* addContactAsync(action) {
   try {
-    yield call(axios.post, window.location.origin + 
+    const response = yield call(axios.post, window.location.origin + 
       '/contacts', {number: action.number});
-    yield put({ type: 'ADD_CONTACT_SUCCESS', number: action.number});
+    yield put({ type: 'ADD_CONTACT_SUCCESS', 
+      number: response.data.number});
   } catch (error) {
     yield put({ type: 'ADD_CONTACT_FAILURE', error: error});
   }
