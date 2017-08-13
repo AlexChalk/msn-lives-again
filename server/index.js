@@ -18,20 +18,6 @@ mongoose.connect(database, {
   useMongoClient: true,
 });
 
-// Create session hash
-const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session')(session);
-const store = new MongoDBStore(
-  { uri: database, collection: 'mySessions' });
-
-app.use(require('express-session')({
-  secret: 'This is a secret',
-  cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 },
-  store: store,
-  resave: true,
-  saveUninitialized: true
-}));
-
 // Run server
 const server = app.listen(PORT);
 const io = require('socket.io')(server);

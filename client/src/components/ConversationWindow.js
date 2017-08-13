@@ -2,10 +2,7 @@ import React from 'react';
 import SendMessageContainer from '../containers/SendMessageContainer.js';
 import Message from './Message.js';
 
-function ConversationWindow({ messages, match }) {
-  const matchedMessages = messages.filter(message => 
-    message.contact === match.params.id);
-
+function ConversationWindow({ messages }) {
   return (
     <div className="col-md-8">
       <div className="chat" id="chat"></div>

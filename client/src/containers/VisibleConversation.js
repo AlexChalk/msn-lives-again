@@ -1,24 +1,17 @@
 import { connect } from 'react-redux';
-import { receive } from '../actions/actionCreators.js';
 import ConversationWindow from '../components/ConversationWindow.js';
+
+const getContactMessages = (messages, activeContact) => {
+  return messages.filter(m => m.contact === activeContact);
+};
 
 const mapStateToProps = state => {
   return {
-    messages: state.messages
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    onWindowClick: id => {
-      dispatch(receive(id));
-    }
+    messages: getContactMessages(state.messages, state.activeContact)
   };
 };
 
 const VisibleConversation = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ConversationWindow);
+  mapStateToProps)(ConversationWindow);
 
 export default VisibleConversation;

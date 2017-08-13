@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { receive } from '../actions/actionCreators.js';
+import { setActiveContact } from '../actions/actionCreators.js';
 import ContactsWindow from '../components/ContactsWindow.js';
 
 const mapStateToProps = state => {
@@ -10,8 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onWindowClick: id => {
-      dispatch(receive(id));
+    setActiveContact: id => {
+      dispatch(setActiveContact(id));
     }
   };
 };
