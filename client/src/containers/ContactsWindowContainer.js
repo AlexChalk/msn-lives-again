@@ -16,9 +16,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const VisibleContacts = connect(
+const ContactsWindowContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ContactsWindow);
 
-export default VisibleContacts;
+export default ContactsWindowContainer;

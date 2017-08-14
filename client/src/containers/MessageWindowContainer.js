@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ConversationWindow from '../components/ConversationWindow.js';
+import MessageWindow from '../components/MessageWindow.js';
 
 const getContactMessages = (messages, activeContact) => {
   return messages.filter(m => m.contact === activeContact);
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
   };
 };
 
-const VisibleConversation = connect(
-  mapStateToProps)(ConversationWindow);
+const MessageWindowContainer = connect(
+  mapStateToProps)(MessageWindow);
 
-export default VisibleConversation;
+export default MessageWindowContainer;

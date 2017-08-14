@@ -2,7 +2,7 @@ import React from 'react';
 import SendMessageContainer from '../containers/SendMessageContainer.js';
 import Message from './Message.js';
 
-function ConversationWindow({ messages }) {
+function MessageWindow({ messages }) {
   return (
     <div className="col-md-8">
       <div className="chat" id="chat"></div>
@@ -16,4 +16,4 @@ function ConversationWindow({ messages }) {
   );
 }
 
-export default ConversationWindow;
+export default MessageWindow;
