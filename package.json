@@ -9,6 +9,7 @@
     "start": "nodemon server",
     "start-servers": "concurrently \"nodemon server\" \"cd client && npm start\"",
     "e2e-tests": "node nightwatch.conf.js && ./node_modules/.bin/nightwatch",
+    "e2e-tests --no-selenium-setup": "./node_modules/.bin/nightwatch",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [
