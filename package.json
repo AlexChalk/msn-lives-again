@@ -10,6 +10,7 @@
     "start-servers": "concurrently \"nodemon server\" \"cd client && npm start\"",
     "e2e-tests": "node nightwatch.conf.js && ./node_modules/.bin/nightwatch",
     "e2e-tests --no-selenium-setup": "./node_modules/.bin/nightwatch",
+    "drop-test-db": "mongo twilio-messenger-test --eval \"db.dropDatabase()\"",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [
@@ -17,6 +18,7 @@
     "react-ui/node_modules"
   ],
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.14.1",
     "mongoose": "^4.11.6",
     "socket.io": "^2.0.3",

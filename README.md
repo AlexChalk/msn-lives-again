@@ -33,4 +33,7 @@ You should now be up and running.
 
 ## Tests
 
-Run tests: `npm run e2e-tests`. n.b. This will download and boot selenium webserver on your machine—if you already have an instance of selenium webserver running, instead use `npm run e2e-tests --no-selenium-setup`.
+1. Set a variable that tells the app to use a testing database: `export MONGODB_URI=mongodb://localhost:27017/twilio-messenger-test`
+2. Run tests: `npm run e2e-tests`. n.b. This will download and boot selenium webserver on your machine—if you already have an instance of selenium webserver running, instead use `npm run e2e-tests --no-selenium-setup`.
+3. Clean e2e testing database: `npm run drop-test-db`.
+4. Switch back to the development databse: `unset MONGODB_URI`.

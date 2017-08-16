@@ -1,41 +1,41 @@
-const SCREENSHOT_PATH = "./screenshots/";
+const SCREENSHOT_PATH = './screenshots/';
 const BINPATH = './node_modules/nightwatch/bin/';
 
 module.exports = {
-  "src_folders": [
-    "tests/e2e"// Where you are storing your Nightwatch e2e tests
+  'src_folders': [
+    'tests/e2e'// Where you are storing your Nightwatch e2e tests
   ],
-  "output_folder": "./reports", // reports (test outcome) output by nightwatch
-  "selenium": { // downloaded by selenium-download module 
-    "start_process": true, // tells nightwatch to start/stop the selenium process
-    "server_path": "./node_modules/nightwatch/bin/selenium.jar",
-    "host": "127.0.0.1",
-    "port": 4444, // standard selenium port
-    "cli_args": { // chromedriver is downloaded by selenium-download 
-      "webdriver.chrome.driver" : "./node_modules/nightwatch/bin/chromedriver"
+  'output_folder': './reports', // reports (test outcome) output by nightwatch
+  'selenium': { // downloaded by selenium-download module 
+    'start_process': true, // tells nightwatch to start/stop the selenium process
+    'server_path': './node_modules/nightwatch/bin/selenium.jar',
+    'host': '127.0.0.1',
+    'port': 4444, // standard selenium port
+    'cli_args': { // chromedriver is downloaded by selenium-download 
+      'webdriver.chrome.driver' : './node_modules/nightwatch/bin/chromedriver'
     }
   },
-  "test_settings": {
-    "default": {
-      "screenshots": {
-        "enabled": false, // if you want to keep screenshots
-        "path": SCREENSHOT_PATH // save screenshots here
+  'test_settings': {
+    'default': {
+      'screenshots': {
+        'enabled': false, // if you want to keep screenshots
+        'path': SCREENSHOT_PATH // save screenshots here
       },
-      "globals": {
-        "waitForConditionTimeout": 5000 // sometimes internet is slow so wait.
+      'globals': {
+        'waitForConditionTimeout': 5000 // sometimes internet is slow so wait.
       },
-      "desiredCapabilities": { // use Chrome as the default browser for tests
-        "browserName": "chrome"
+      'desiredCapabilities': { // use Chrome as the default browser for tests
+        'browserName': 'chrome'
       }
     },
-    "chrome": {
-      "desiredCapabilities": {
-        "browserName": "chrome",
-        "javascriptEnabled": true // turn off to test progressive enhancement
+    'chrome': {
+      'desiredCapabilities': {
+        'browserName': 'chrome',
+        'javascriptEnabled': true // turn off to test progressive enhancement
       }
     }
   }
-}
+};
 
 // selenium-download does exactly what it's name suggests;
 // downloads (or updates) the version of Selenium (& chromedriver)
@@ -69,7 +69,7 @@ function imgpath (browser) {
   meta.push(a.browserName ? a.browserName : 'any');
   meta.push(a.version ? a.version : 'any');
   meta.push(a.name); // this is the test filename so always exists.
-    var metadata = meta.join('~').toLowerCase().replace(/ /g, '');
+  var metadata = meta.join('~').toLowerCase().replace(/ /g, '');
   return SCREENSHOT_PATH + metadata + '_' + padLeft(FILECOUNT++) + '_';
 }
 
