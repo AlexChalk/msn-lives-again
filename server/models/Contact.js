@@ -11,7 +11,7 @@ const ContactData = mongoose.model('ContactData', contactDataSchema);
 exports.loadAll = (req, res) => {
   ContactData.find()
     .then(contactData => res.status(201).send(contactData))
-    .catch(error => res.status(400).send(error));
+    .catch(() => res.sendStatus(400));
 };
 
 exports.saveNew = (req, res) => {

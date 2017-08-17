@@ -15,8 +15,8 @@ const MessageData = mongoose.model('MessageData', messageDataSchema);
 
 exports.loadAll = (req, res) => {
   MessageData.find()
-    .then(messageData => res.status(201).send(messageData))
-    .catch(error => res.status(400).send(error));
+    .then(messageData => res.status(200).send(messageData))
+    .catch(() => res.sendStatus(400));
 };
 
 exports.sendSMSAndSave = (req, res) => {
@@ -45,8 +45,7 @@ exports.sendSMSAndSave = (req, res) => {
       messageData.save();
       res.status(200).send(messageData);
     })
-
-    .catch(error => res.status(400).send(error));
+    .catch(() => res.status(400).send('Missing message parameters.'));
 };
 
 
