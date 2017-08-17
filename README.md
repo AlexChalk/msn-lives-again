@@ -4,6 +4,10 @@ An instant messaging application built to manage Twilio-based SMS communications
 
 ![screenshot of app](http://i.imgur.com/xiJaSKH.png)
 
+## Use Notes
+
+Contact numbers must be added in international format with a leading `+`, otherwise they will not be accepted.
+
 ## Setup
 
 This guide assumes a UNIX operating system, a working installation of node, a running mongodb server at `localhost:27017`, and a Twilio account with an SMS-enabled number:
@@ -33,7 +37,8 @@ You should now be up and running.
 
 ## Tests
 
-1. Set a variable that tells the app to use a testing database: `export MONGODB_URI=mongodb://localhost:27017/twilio-messenger-test`
-2. Run tests: `npm run e2e-tests`. n.b. This will download and boot selenium webserver on your machine—if you already have an instance of selenium webserver running, instead use `npm run e2e-tests --no-selenium-setup`.
-3. Clean e2e testing database: `npm run drop-test-db`.
-4. Switch back to the development databse: `unset MONGODB_URI`.
+1. Set a variable that tells the app to use a testing database: `export MONGODB_URI=mongodb://localhost:27017/twilio-messenger-test`.
+2. Boot servers: `npm run start-servers`.
+3. Run tests: `npm run e2e-tests`. n.b. This will download and boot selenium webserver on your machine—if you already have an instance of selenium webserver running, instead use `npm run e2e-tests --no-selenium-setup`.
+4. Clean e2e testing database: `npm run drop-test-db`.
+5. Switch back to the development databse: `unset MONGODB_URI`.
