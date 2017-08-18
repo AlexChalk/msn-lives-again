@@ -12,6 +12,11 @@
   margin: 3px;
 }
 
+.new-conversation {
+  background: #E2E6EB;
+  margin: 3px;
+}
+
 .outgoing {
   background: #ABCDEF; 
   max-width: 80vw;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Contact from './Contact.js';
 
 const ContactsWindow = ({ contacts, setActiveContact }) => ( 
@@ -10,6 +11,9 @@ const ContactsWindow = ({ contacts, setActiveContact }) => (
             setActiveContact={setActiveContact} 
             {...contact}/>
         ))}
+        <div className="well-sm new-conversation" >
+          <Link to="/">New Conversation</Link>
+        </div>
     </div>
   </div>
 );
