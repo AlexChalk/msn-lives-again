@@ -42,3 +42,7 @@ You should now be up and running.
 3. Run tests: `npm run e2e-tests`. n.b. This will download and boot selenium webserver on your machine—if you already have an instance of selenium webserver running, instead use `npm run e2e-tests --no-selenium-setup`.
 4. Clean e2e testing database: `npm run drop-test-db`.
 5. Switch back to the development databse: `unset MONGODB_URI`.
+
+## Why is there no controller directory on the backend?
+
+Since the application's API is comprised of only five routes at present, I don't think the time is right to split the root methods into separate controller files. The routes file is currently <50 lines of code, and I think that's modular enough for now. But as the application grows, this is a change I will definitely implement.
