@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "enzyme": "^2.9.1",
@@ -29,6 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "unit-test": "./node_modules/.bin/mocha --compilers js:babel-register --recursive",
+    "ut2": "./node_modules/.bin/mocha --compilers js:babel-register --require ./test/setup.js 'src/**/*.test.js'",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:5000"

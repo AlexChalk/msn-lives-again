@@ -1,4 +1,13 @@
-var jsdom = require('jsdom');
+require('babel-register')(); 
 
-global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
-global.window = document.parentWindow;
+const jsdom = require('jsdom');
+const doc = new jsdom.JSDOM('<!doctype html><html><body></body></html>');
+
+global.document = doc;
+global.window = doc.window;
+
+Object.keys(window).forEach((key) => {
+  if (!(key in global)) {
+    global[key] = window[key];
+  }
+});
