@@ -1,4 +1,6 @@
-require('jsdom-global')();
+require('babel-polyfill');
+require('jsdom-global')('<!doctype html><html><body></body></html>',
+  { url: 'http://localhost:3000/' }); 
 // const { JSDOM } = require('jsdom');
 //
 // const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
