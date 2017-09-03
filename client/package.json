@@ -8,8 +8,10 @@
     "chai": "^4.1.2",
     "enzyme": "^2.9.1",
     "jsdom": "^11.2.0",
+    "jsdom-global": "^3.0.2",
     "mocha": "^3.5.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -28,9 +30,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "unit-test": "./node_modules/.bin/mocha --compilers js:babel-register --recursive",
-    "ut2": "./node_modules/.bin/mocha --compilers js:babel-register --require ./test/setup.js 'src/**/*.test.js'",
+    "jest-test": "react-scripts test --env=jsdom",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register --require ./test/setup.js 'src/**/*.test.js'",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:5000"
